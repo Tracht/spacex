@@ -1,7 +1,7 @@
 import React from "react";
 import "./app.css";
 
-class Cards extends React.Component {
+class Card extends React.Component {
 
   constructor(props) {
     super(props);
@@ -34,14 +34,15 @@ class Cards extends React.Component {
       <div>
        <section>
           {this.state.data.map(
-            (userSelection) => {
+            (rocket) => {
               return(
-                <section key={userSelection.id}>
-                  <p> Name: {userSelection.rocket_name} </p> 
-                  <p> Success rate: {userSelection.success_rate_pct}% </p>
+                <section key={rocket.id}>
+                  <p> Name: {rocket.rocket_name} </p> 
+                  <p> Success rate: {rocket.success_rate_pct}% </p>
                   <p> Description: </p>
-                  <p> {userSelection.description} </p>
-                  <p> Active: {userSelection.active.toString()} </p>
+                  <p> {rocket.description} </p>
+                  <p> Currently active? {rocket.active.toString()}  </p>
+
                   <br></br>
                 </section>
               )
@@ -54,4 +55,4 @@ class Cards extends React.Component {
 
 }
 
-export default Cards;
+export default Card;

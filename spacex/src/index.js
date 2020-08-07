@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Cards from './Cards.js'
+import CardSection from './CardSection'
+// import Cards from './Cards.js'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Cards />
+    {/* <Cards /> */}
+    <CardSection />
   </React.StrictMode>,
   document.getElementById('root')
 );
