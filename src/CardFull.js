@@ -1,4 +1,6 @@
 import React from "react";
+import Image from 'react-bootstrap/Image';
+
 import "./app.css";
 
 class CardFull extends React.Component {
@@ -39,7 +41,7 @@ class CardFull extends React.Component {
           <p> Cost_per_launch: {rocket.cost_per_launch} </p>
           <p> First flight: {rocket.first_flight} </p>
           <p> Country: {rocket.country}</p>
-          <img src={rocket.flickr_images} alt="Rocket"/>
+          <Image src={rocket.flickr_images} rounded />
           <br></br>
         </section>
       </div>
