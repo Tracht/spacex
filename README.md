@@ -1,7 +1,8 @@
 # SpaceX!
 
 ## TechStack 
-- React (bootstrapped with [Create React App](https://github.com/facebook/create-react-app)).
+- [React](https://github.com/facebook/create-react-app)
+- [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
 - Jest
 - Cypress
 
