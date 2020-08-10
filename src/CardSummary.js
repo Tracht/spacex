@@ -1,7 +1,7 @@
 import React from "react";
 import "./app.css";
 
-class Card extends React.Component {
+class CardSummary extends React.Component {
 
   constructor(props) {
     super(props);
@@ -27,7 +27,6 @@ class Card extends React.Component {
       console.log("Error:", error)
     });
   };
-
 
   render() {
     return(
@@ -55,4 +54,4 @@ class Card extends React.Component {
 
 }
 
-export default Card;
+export default CardSummary;
