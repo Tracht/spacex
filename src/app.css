@@ -1,4 +1,32 @@
 h1 {
-  color: greenyellow;
+  color: black;
   text-align: center;
+}
+
+#title-description {
+  text-align: center;
+  
+}
+
+#title {
+  font-weight: bolder;
+}
+
+.card-description {
+  font-style: italic;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  /* background-color: #2196F3; */
+  padding: 10px;
+}
+
+.grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  /* font-size: 30px; */
 }

@@ -13,8 +13,8 @@ class Title extends React.Component {
           
         <Jumbotron fluid>
           <Container>
-            <h1>SpaceX</h1>
-            <p>
+            <h1 id="title">SpaceX</h1>
+            <p id="title-description">
               Welcome! Have a look around. 
             </p>
           </Container>

@@ -16,6 +16,7 @@ class CardSection extends React.Component {
       <div>
         <CardSummary />
         {/* { this.showFulLCard ? <CardFull /> : null } */}
+        <br></br>
         <CardFull />
       </div>
     );

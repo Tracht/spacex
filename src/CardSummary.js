@@ -34,27 +34,29 @@ class CardSummary extends React.Component {
     return(
       <div>
        <section>
+        {/* <div class="grid-container"> */}
+        <div class="w3-row-padding">
           {this.state.data.map(
             (rocket) => {
               return(
-                <Card style={{ width: '25rem' }} key={rocket.id}>
-                  <Card.Body>
-                    <Card.Title> {rocket.rocket_name} </Card.Title>
-                    <Card.Text>
-                      Success rate: {rocket.success_rate_pct}%
-                    </Card.Text>
-                    <Card.Text>
-                      {rocket.description} 
-                    </Card.Text>
-                    <Card.Text>
-                      Currently active? {rocket.active.toString()} 
-                    </Card.Text>
-                    <Button variant="info">See more</Button>
-                  </Card.Body>
-                </Card>
+                <div class="w3-col s4" >
+                  <Card style={{ width: '25rem' }} key={rocket.id}>
+                    <Card.Body>
+                      <Card.Title> {rocket.rocket_name} </Card.Title>
+                      <Card.Text>
+                        Success rate: {rocket.success_rate_pct}%
+                      </Card.Text>
+                      <Card.Text>
+                        {rocket.description.substring(0,80)}...
+                      </Card.Text>
+                      <Button variant="info">See more</Button>
+                    </Card.Body>
+                  </Card>
+                </div>
               )
             })
           }
+          </div>
         </section>
       </div>
     )
