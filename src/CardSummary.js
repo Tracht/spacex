@@ -37,8 +37,7 @@ class CardSummary extends React.Component {
           {this.state.data.map(
             (rocket) => {
               return(
-                <Card style={{ width: '30rem' }} key={rocket.id}>
-                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                <Card style={{ width: '25rem' }} key={rocket.id}>
                   <Card.Body>
                     <Card.Title> {rocket.rocket_name} </Card.Title>
                     <Card.Text>

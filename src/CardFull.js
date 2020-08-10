@@ -1,7 +1,7 @@
 import React from "react";
-// import Image from 'react-bootstrap/Image';
-import Figure from 'react-bootstrap/Figure';
 import "./app.css";
+import Figure from 'react-bootstrap/Figure';
+import Card from 'react-bootstrap/Card';
 
 class CardFull extends React.Component {
 
@@ -36,22 +36,24 @@ class CardFull extends React.Component {
 
     return(
       <div>
-       <section key={rocket.id}>
-          <p> Name: {rocket.rocket_name} </p> 
-          <p> Cost_per_launch: {rocket.cost_per_launch} </p>
-          <p> First flight: {rocket.first_flight} </p>
-          <p> Country: {rocket.country}</p>
-          <Figure>
-            <Figure.Image
-              width={171*2}
-              height={180*2}
-              alt="Rocket"
-              src={rocket.flickr_images}
-              rounded
-            />
-          </Figure> 
+          <Card style={{ width: '60rem' }} key={rocket.id}>
+            <Card.Body>
+              <Card.Title> {rocket.rocket_name} </Card.Title>
+              <Card.Text> Cost per launch: ${rocket.cost_per_launch}  </Card.Text>
+              <Card.Text> First flight: {rocket.first_flight} </Card.Text>
+              <Card.Text> Country: {rocket.country} </Card.Text>
+              <Figure>
+                <Figure.Image
+                  width={171*2}
+                  height={180*2}
+                  alt="Rocket"
+                  src={rocket.flickr_images}
+                  rounded
+                />
+              </Figure> 
+            </Card.Body>
+          </Card>
           <br></br>
-        </section>
       </div>
     )
   }
