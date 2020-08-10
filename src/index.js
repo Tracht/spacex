@@ -8,7 +8,6 @@ import CardSection from './CardSection'
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    {/* <Cards /> */}
     <CardSection />
   </React.StrictMode>,
   document.getElementById('root')
