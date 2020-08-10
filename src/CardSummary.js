@@ -41,7 +41,6 @@ class CardSummary extends React.Component {
                   <p> Description: </p>
                   <p> {rocket.description} </p>
                   <p> Currently active? {rocket.active.toString()}  </p>
-
                   <br></br>
                 </section>
               )

@@ -1,5 +1,6 @@
 import React from 'react';
 import CardSummary from './CardSummary.js';
+import CardFull from './CardFull.js';
 class CardSection extends React.Component {
 
 
@@ -7,7 +8,7 @@ class CardSection extends React.Component {
     return(
       <div>
         <CardSummary />
-        {/* <FullCard /> */}
+        <CardFull />
       </div>
     );
   };
