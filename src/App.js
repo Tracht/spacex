@@ -10,7 +10,7 @@ class App extends React.Component {
         <header className="App-header">
           <h1>
             SpaceX
-          </h1>Add
+          </h1>
         </header>
       </div>
     );

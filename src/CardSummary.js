@@ -1,5 +1,7 @@
 import React from "react";
 import "./app.css";
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 class CardSummary extends React.Component {
 
@@ -35,14 +37,22 @@ class CardSummary extends React.Component {
           {this.state.data.map(
             (rocket) => {
               return(
-                <section key={rocket.id}>
-                  <p> Name: {rocket.rocket_name} </p> 
-                  <p> Success rate: {rocket.success_rate_pct}% </p>
-                  <p> Description: </p>
-                  <p> {rocket.description} </p>
-                  <p> Currently active? {rocket.active.toString()}  </p>
-                  <br></br>
-                </section>
+                <Card style={{ width: '30rem' }} key={rocket.id}>
+                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                  <Card.Body>
+                    <Card.Title> {rocket.rocket_name} </Card.Title>
+                    <Card.Text>
+                      Success rate: {rocket.success_rate_pct}%
+                    </Card.Text>
+                    <Card.Text>
+                      {rocket.description} 
+                    </Card.Text>
+                    <Card.Text>
+                      Currently active? {rocket.active.toString()} 
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                  </Card.Body>
+                </Card>
               )
             })
           }
