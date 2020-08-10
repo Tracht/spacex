@@ -49,7 +49,7 @@ class CardSummary extends React.Component {
                       <Card.Text>
                         {rocket.description.substring(0,80)}...
                       </Card.Text>
-                      <Button variant="info">See more</Button>
+                      <Button variant="dark">See more</Button>
                     </Card.Body>
                   </Card>
                 </div>
