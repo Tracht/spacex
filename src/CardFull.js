@@ -1,7 +1,6 @@
 import React from "react";
 // import Image from 'react-bootstrap/Image';
 import Figure from 'react-bootstrap/Figure';
-
 import "./app.css";
 
 class CardFull extends React.Component {
@@ -48,6 +47,7 @@ class CardFull extends React.Component {
               height={180*2}
               alt="Rocket"
               src={rocket.flickr_images}
+              rounded
             />
           </Figure> 
           <br></br>

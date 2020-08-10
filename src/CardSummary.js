@@ -50,7 +50,7 @@ class CardSummary extends React.Component {
                     <Card.Text>
                       Currently active? {rocket.active.toString()} 
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Button variant="info">See more</Button>
                   </Card.Body>
                 </Card>
               )
