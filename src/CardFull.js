@@ -36,8 +36,8 @@ class CardFull extends React.Component {
 
     return(
       <div class="w3-row-padding">
-        <div class="w3-col s4" >
-            <Card style={{ width: '60rem' }} key={rocket.id}>
+        <div class="w3-col s16" >
+            <Card style={{ width: '90%' }} key={rocket.id}>
               <Card.Body>
                 <Card.Title> {rocket.rocket_name} </Card.Title>
                 <Card.Title class="card-description"> {rocket.description} </Card.Title> <br></br>
@@ -55,9 +55,8 @@ class CardFull extends React.Component {
                 </Figure> 
               </Card.Body>
             </Card>
-            <br></br>
-        </div>
-      </div>
+          </div>
+       </div>
     )
   }
 
