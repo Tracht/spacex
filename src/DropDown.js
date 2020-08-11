@@ -9,8 +9,7 @@ class DropDown extends React.Component {
   render() {
     return(
       <div>
-
-      <Navbar bg="light" variant="primary" expand="lg">
+      <Navbar bg="white" variant="primary" expand="lg">
           <Nav className="mr-auto">
             <NavDropdown title="Inventory" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Rockets</NavDropdown.Item>
@@ -18,7 +17,6 @@ class DropDown extends React.Component {
             </NavDropdown>
           </Nav>
       </Navbar>
-
       </div>
     )
   };

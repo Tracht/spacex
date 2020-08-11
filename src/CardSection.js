@@ -1,6 +1,8 @@
 import React from 'react';
 import CardSummary from './CardSummary.js';
 import CardFull from './CardFull.js';
+import DropDown from './DropDown.js';
+
 
 class CardSection extends React.Component {
 
@@ -14,9 +16,9 @@ class CardSection extends React.Component {
   render() {
     return(
       <div>
+        <DropDown />
         <CardSummary />
-        {/* { !this.showFullCard ? <CardFull /> : "Nothing to see here"}
-        <br></br> */}
+        {/* { !this.showFullCard ? <CardFull /> : "Nothing to see here"} */}
         <CardFull />
       </div>
     );
