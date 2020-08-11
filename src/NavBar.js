@@ -25,9 +25,6 @@ class NavBar extends React.Component {
         </Navbar.Collapse>
       </Navbar>
 
-      <Navbar bg="light">
-        <Navbar.Brand></Navbar.Brand>
-      </Navbar>
       </div>
     )
   };
