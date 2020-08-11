@@ -15,7 +15,7 @@ class Title extends React.Component {
           <Container>
             <h1 id="title">SpaceX</h1>
             <p id="title-description">
-              Welcome! Have a look around our inventory using the drop-down
+              Welcome! Have a look around our inventory.
             </p>
           </Container>
         </Jumbotron>

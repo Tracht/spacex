@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import Title from './Title';
-import NavBar from './NavBar'
+import NavBarTitle from './NavBarTitle'
+import Title from './Title';
 import CardSection from './CardSection'
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavBar />
-    {/* <Title /> */}
+    <NavBarTitle />
+    <Title />
     <CardSection />
   </React.StrictMode>,
   document.getElementById('root')
