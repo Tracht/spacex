@@ -89,7 +89,6 @@ class CardSection extends React.Component {
     this.setState({
       specificData: selection,
     });
-    
     if ( this.showFullCardDragon === true ) {
         fetch(`https://api.spacexdata.com/v3/${this.selection}/${this.state.specificData.id}`) 
         .then(response => response.json())
@@ -127,7 +126,7 @@ class CardSection extends React.Component {
         <DropDown setDragon={this.setDragon} setRocket={this.setRocket}/>
         { showFullCardDragon ? <CardFull specificData={this.state.summaryData} selection={this.state.selection} /> : null }
         { showFullCardRocket ? <CardFull specificData={this.state.summaryData} selection={this.state.selection} /> : null }
-        <CardSummary handleClick={this.handleClick} data={this.state.summaryData} specificData={this.state.specificData} />
+        <CardSummary seeMore={this.seeMore} data={this.state.summaryData} specificData={this.state.specificData} />
       </div>
     );
   }
