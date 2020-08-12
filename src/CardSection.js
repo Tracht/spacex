@@ -14,6 +14,7 @@ class CardSection extends React.Component {
       selection: 'rockets',
       showFullCardDragon: false,
       showFullCardRocket: false,
+
     };
   };
 
@@ -25,16 +26,19 @@ class CardSection extends React.Component {
     const rocketID = this.state.specificData.rocket_id;
 
     if (showFullCardDragon === false || showFullCardRocket === false ) {
-      return (this.fetchCardSummary(`https://api.spacexdata.com/v3/${userSelection}`));
+      return (this.fetchCardSummary(`https://api.spacexdata.com/v3/${userSelection}`), 
+      console.log("ComponentDidMount Summary Data:", this.summaryData));
     } else if ( showFullCardDragon === true ) {
       return( 
         this.fetchCardSummary(`https://api.spacexdata.com/v3/${userSelection}`), 
-        this.fetchCardFull(`https://api.spacexdata.com/v3/${userSelection}/${dragonID}`)
+        this.fetchCardFull(`https://api.spacexdata.com/v3/${userSelection}/${dragonID}`),
+        console.log("ComponentDidMount Summary Data:", this.summaryData, "Specific Data", this.specificData)
         )
     } else if ( showFullCardRocket === true ) {
       return(
         this.fetchCardSummary(`https://api.spacexdata.com/v3/${userSelection}`),
-        this.fetchCardFull(`https://api.spacexdata.com/v3/${userSelection}/${rocketID}`)
+        this.fetchCardFull(`https://api.spacexdata.com/v3/${userSelection}/${rocketID}`), 
+        console.log("ComponentDidMount Summary Data:", this.summaryData, "Specific Data", this.specificData)
       )
     }
   }
@@ -44,16 +48,15 @@ class CardSection extends React.Component {
     fetch(apiToFetch)
     .then(response => response.json())
     .then((data) => {
-      console.log('Success:', data);
+      console.log('Fetch CardSummary Success:', data);
       this.setState({
         summaryData: data,
-        selection: "dragons",
         showFullCardDragons: true, 
         showFullCardRockets: false 
       });
     })
     .catch((error) => {
-      console.log("Error:", error)
+      console.log("Fetch CardSummary Error:", error)
     });
   };
 
@@ -62,22 +65,22 @@ class CardSection extends React.Component {
       fetch(apiToFetch)
       .then(response => response.json())
       .then((data) => {
-        console.log('Success:', data);
+        console.log('Fetch CardFull Success:', data);
         this.setState({
           specificData: data,
         });
       })
       .catch((error) => {
-        console.log("Error:", error)
+        console.log("Fetch CardFull Error:", error)
       });
     };
   
     seeMore = (selection) => {
+      selection.preventDefault();
       this.setState({
         specificData: selection,
       });
-
-    } 
+    }; 
 
   // DropDown Component ------------------------------- //
   setDragon = (e) => {
@@ -106,7 +109,7 @@ class CardSection extends React.Component {
 
     return(
       <div>
-        <DropDown setDragon={this.setDragon} setRocket={this.setRocket}/>
+        <DropDown setDragon={this.setDragon.bind(this)} setRocket={this.setRocket.bind(this)}/>
         { showFullCardDragon ? <CardFull specificData={this.state.summaryData} selection={this.state.selection} /> : null }
         { showFullCardRocket ? <CardFull specificData={this.state.summaryData} selection={this.state.selection} /> : null }
         <CardSummary handleClick={this.handleClick} data={this.state.summaryData} specificData={this.state.specificData} />
