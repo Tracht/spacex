@@ -8,53 +8,28 @@ class CardFull extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        {
-          id: "dragon2",
-        }
-      ],
-      selection: "dragons"
+      specificData: {},
     };
   };
 
-  // componentDidMount() {
-  // if (this.state.selection === 'dragons') {
-  //   return this.fetchData(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.data.id}`); 
-  // } else {
-  //   return this.fetchData(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.data.rocket_name}`) 
-  //   }
-  // }
-
-  // fetchData = (apiToFetch) => {
-  //   fetch(apiToFetch)
-  //   .then(response => response.json())
-  //   .then((data) => {
-  //     console.log('Success:', data);
-  //     this.setState({
-  //       data: data,
-  //     });
-  //   })
-  //   .catch((error) => {
-  //     console.log("Error:", error)
-  //   });
-  // };
-
-
   render() {
   
-    let selection = this.state.data;
+    let selection = this.state.specificData;
+
+    console.log(1);
+    console.log(selection);
 
     return(
       <div class="w3-row-padding">
-        <div class="w3-col s16" >
-            <Card style={{ width: '90%' }} key={selection.id}>
+        <div class="w3-col" >
+            <Card style={{ width: '100%' }} id={selection.id}>
               <Card.Body>
                 <Card.Title> {selection.rocket_name} </Card.Title>
                 <Card.Title> {selection.name} </Card.Title>
                   <Figure>
                     <Figure.Image
-                      width={171*2}
-                      height={180*2}
+                      width="100%"
+                      height="100%"
                       src={selection.flickr_images}
                       rounded
                     />
