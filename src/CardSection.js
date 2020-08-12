@@ -25,8 +25,6 @@ class CardSection extends React.Component {
         console.log('Fetch CardSummary:', data);
         this.setState({
           summaryData: data,
-          showFullCardDragons: false, 
-          showFullCardRockets: false 
         });
       })
     .catch((error) => {
@@ -49,11 +47,9 @@ class CardSection extends React.Component {
         console.log('Fetch CardSummary:', data);
         this.setState({
           summaryData: data,
-          showFullCardDragons: false, 
-          showFullCardRockets: false 
         });
       })
-  .catch((error) => {
+    .catch((error) => {
       console.log("Fetch CardSummary Error:", error)
     });
   };
@@ -73,11 +69,9 @@ class CardSection extends React.Component {
         console.log('Fetch CardSummary:', data);
         this.setState({
           summaryData: data,
-          showFullCardDragons: false, 
-          showFullCardRockets: false 
         });
       })
-  .catch((error) => {
+    .catch((error) => {
       console.log("Fetch CardSummary Error:", error)
     });
   };
@@ -85,15 +79,30 @@ class CardSection extends React.Component {
   // Select a card to SEE MORE  ------------------------------- // 
   // ----------------------------------------------------------- //
   seeMore = (selection) => {
-    // selection.preventDefault();
+    selection.preventDefault();
+
     this.setState({
       specificData: selection,
     });
-    if ( this.showFullCardDragon === true ) {
-        fetch(`https://api.spacexdata.com/v3/dragons/${this.state.specificData.id}`) 
+    if ( this.showFullCardRocket === true ) {
+        fetch(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.specificData.rocket_id}`) 
         .then(response => response.json())
         .then((data) => {
           console.log('Fetch CardFull:', data);
+          console.log('id', this.state.specificData.rocket_id);
+          this.setState({
+            specificData: data,
+          });
+         })
+        .catch((error) => {
+          console.log("Fetch CardFull Error:", error)
+        });
+    } else if ( this.showFullCardDragon === true) {
+        fetch(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.specificData.id}`)
+        .then(response => response.json())
+        .then((data) => {
+          console.log('Fetch CardFull:', data);
+          console.log('id', this.state.specificData.id);
           this.setState({
             specificData: data,
           });
@@ -102,21 +111,15 @@ class CardSection extends React.Component {
           console.log("Fetch CardFull Error:", error)
         });
     } else {
-        fetch(`https://api.spacexdata.com/v3/rockets/${this.state.specificData.rocket_id}`)
-        .then(response => response.json())
-        .then((data) => {
-          console.log('Fetch CardFull:', data);
-          this.setState({
-            specificData: data,
-          });
-         })
-        .catch((error) => {
-          console.log("Fetch CardFull Error:", error)
-        });
+      return;
     }
   }; 
 
   render() {
+
+    console.log("summaryData", this.state.summaryData, 
+    "fullCardRocket?", this.state.showFullCardRocket,
+    "fullCardDragon?", this.state.showFullCardDragon)
    
     let showFullCardDragon = this.state.showFullCardDragon; 
     let showFullCardRocket = this.state.showFullCardRocket; 
@@ -124,8 +127,8 @@ class CardSection extends React.Component {
     return(
       <div>
         <DropDown setDragon={this.setDragon} setRocket={this.setRocket}/>
-        { showFullCardDragon ? <CardFull specificData={this.state.summaryData} selection={this.state.selection} /> : null }
-        { showFullCardRocket ? <CardFull specificData={this.state.summaryData} selection={this.state.selection} /> : null }
+        { showFullCardDragon ? <CardFull specificData={this.state.specificData} selection={this.state.selection} /> : null }
+        { showFullCardRocket ? <CardFull specificData={this.state.specificData} selection={this.state.selection} /> : null }
         <CardSummary seeMore={this.seeMore} data={this.state.summaryData} specificData={this.state.specificData} />
       </div>
     );
