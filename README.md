@@ -3,8 +3,6 @@
 ## TechStack 
 - [React](https://github.com/facebook/create-react-app)
 - [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
-- Jest
-- Cypress
 
 ### Installation Guide 
 - Clone or Fork the project repo
