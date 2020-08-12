@@ -6,13 +6,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 class DropDown extends React.Component {
 
-  // constructor(props) {
-  //   super();
-  //   this.state = {
-  //     selection: "dragons",
-  //   }
-  // };
-
   render() {
     return(
       <div>
