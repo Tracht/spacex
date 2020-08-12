@@ -6,20 +6,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 class DropDown extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {
-        selection: "",
-    }
-  };
-
-  onSelection = (e) => {
-    e.preventDefault();
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-    console.log(this.state.selection);
-  }
+  // constructor(props) {
+  //   super();
+  //   this.state = {
+  //     selection: "dragons",
+  //   }
+  // };
 
   render() {
     return(
@@ -27,11 +19,10 @@ class DropDown extends React.Component {
       <Navbar bg="white" variant="primary" expand="lg">
           <Nav className="mr-auto">
             <NavDropdown title="Inventory" id="basic-nav-dropdown">
-              <input ></input>
-              <NavDropdown.Item onClick={this.onSelection} name="selection" value="rockets">
+              <NavDropdown.Item onClick={this.props.setRocket} name="selection" value="rockets">
                 Rockets
               </NavDropdown.Item>
-              <NavDropdown.Item onClick={this.onSelection} name="selection" value="dragons">
+              <NavDropdown.Item onClick={this.props.setDragon} name="selection" value="dragons">
                 Dragons
               </NavDropdown.Item>
             </NavDropdown>
