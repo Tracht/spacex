@@ -16,9 +16,6 @@ class CardFull extends React.Component {
   
     let selection = this.state.specificData;
 
-    console.log(1);
-    console.log(selection);
-
     return(
       <div class="w3-row-padding">
         <div class="w3-col" >

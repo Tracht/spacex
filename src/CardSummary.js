@@ -32,7 +32,7 @@ class CardSummary extends React.Component {
                       <Card.Title> {selection.rocket_name} </Card.Title>
                           <Card.Text> First flight: {selection.first_flight} </Card.Text>
                           <Card.Text> {this.activeConversionToString(selection.active)} </Card.Text>
-                      {/* <Button onClick={ () => this.props.seeMore(selection) } type="submit" variant="secondary" size="sm">See more</Button> */}
+                      <Button onClick={ () => this.props.seeMore(selection) } type="submit" variant="secondary" size="sm">See more</Button>
                     </Card.Body>
                   </Card>
                 </div>
