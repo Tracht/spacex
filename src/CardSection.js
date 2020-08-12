@@ -22,7 +22,7 @@ class CardSection extends React.Component {
     fetch(`https://api.spacexdata.com/v3/${userSelection}`)
     .then(response => response.json())
     .then((data) => {
-        console.log('Fetch CardSummary Success:', data);
+        console.log('Fetch CardSummary:', data);
         this.setState({
           summaryData: data,
           showFullCardDragons: false, 
@@ -46,7 +46,7 @@ class CardSection extends React.Component {
     fetch(`https://api.spacexdata.com/v3/dragons`)
     .then(response => response.json())
     .then((data) => {
-        console.log('Fetch CardSummary Success:', data);
+        console.log('Fetch CardSummary:', data);
         this.setState({
           summaryData: data,
           showFullCardDragons: false, 
@@ -70,7 +70,7 @@ class CardSection extends React.Component {
     fetch(`https://api.spacexdata.com/v3/rockets`)
     .then(response => response.json())
     .then((data) => {
-        console.log('Fetch CardSummary Success:', data);
+        console.log('Fetch CardSummary:', data);
         this.setState({
           summaryData: data,
           showFullCardDragons: false, 
@@ -85,15 +85,15 @@ class CardSection extends React.Component {
   // Select a card to SEE MORE  ------------------------------- // 
   // ----------------------------------------------------------- //
   seeMore = (selection) => {
-    selection.preventDefault();
+    // selection.preventDefault();
     this.setState({
       specificData: selection,
     });
     if ( this.showFullCardDragon === true ) {
-        fetch(`https://api.spacexdata.com/v3/${this.selection}/${this.state.specificData.id}`) 
+        fetch(`https://api.spacexdata.com/v3/dragons/${this.state.specificData.id}`) 
         .then(response => response.json())
         .then((data) => {
-          console.log('Fetch CardFull Success:', data);
+          console.log('Fetch CardFull:', data);
           this.setState({
             specificData: data,
           });
@@ -102,10 +102,10 @@ class CardSection extends React.Component {
           console.log("Fetch CardFull Error:", error)
         });
     } else {
-        fetch(`https://api.spacexdata.com/v3/${this.selection}/${this.state.specificData.rocket_id}`)
+        fetch(`https://api.spacexdata.com/v3/rockets/${this.state.specificData.rocket_id}`)
         .then(response => response.json())
         .then((data) => {
-          console.log('Fetch CardFull Success:', data);
+          console.log('Fetch CardFull:', data);
           this.setState({
             specificData: data,
           });
