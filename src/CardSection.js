@@ -12,8 +12,7 @@ class CardSection extends React.Component {
       summaryData: [], // shows all cards
       specificData: {}, // shows selected card
       selection: 'rockets',
-      showFullCardDragon: true,
-      showFullCardRocket: true,
+      showFullCard: true,
     };
   };
 
@@ -38,8 +37,6 @@ class CardSection extends React.Component {
     e.preventDefault();
     this.setState({
       selection: "dragons",
-      showFullCardDragons: true, 
-      showFullCardRockets: false 
     });
     fetch(`https://api.spacexdata.com/v3/dragons`)
     .then(response => response.json())
@@ -60,8 +57,6 @@ class CardSection extends React.Component {
     e.preventDefault();
     this.setState({
       selection: "rockets",
-      showFullCardDragons: false, 
-      showFullCardRockets: true 
     });
     fetch(`https://api.spacexdata.com/v3/rockets`)
     .then(response => response.json())
@@ -85,17 +80,19 @@ class CardSection extends React.Component {
   }; 
 
   render() {
-
-    // console.log("summaryData", this.state.summaryData, 
-    // "fullCardRocket?", this.state.showFullCardRocket,
-    // "fullCardDragon?", this.state.showFullCardDragon)
    
-    let showFullCardRocket = this.state.showFullCardRocket; 
+    let showFullCard = this.state.showFullCard; 
 
     return(
       <div>
         <DropDown setDragon={this.setDragon} setRocket={this.setRocket}/>
-        { showFullCardRocket ? <CardFull summaryData={this.state.summaryData} specificData={this.state.specificData} selection={this.state.selection} /> : null }
+        
+        { showFullCard ? <CardFull 
+          selection={this.selection} 
+          summaryData={this.state.summaryData} 
+          specificData={this.state.specificData} 
+          /> : null }
+
         <CardSummary seeMore={this.seeMore} summaryData={this.state.summaryData} specificData={this.state.specificData} />
       </div>
     );
