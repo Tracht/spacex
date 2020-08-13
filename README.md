@@ -4,7 +4,7 @@
 - [React](https://github.com/facebook/create-react-app)
 - [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
 
-## On the to-do list:
+### To do list
 - Reafactor and consolidate API fetch request (currently setDragon & setRocket)
 - Add tests
 - UI improvements (i.e. add carousel for images)
