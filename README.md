@@ -7,7 +7,7 @@
 ### To do list
 - Reafactor and consolidate API fetch request (currently setDragon & setRocket)
 - Add tests
-- UI improvements (i.e. add carousel for images)
+- UI improvements (i.e. use modal for CardFull component)
 
 ### Installation Guide 
 - Clone or Fork the project repo
