@@ -9,11 +9,11 @@ class CardSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      summaryData: [],
-      specificData: {},
+      summaryData: [], // shows all cards
+      specificData: {}, // shows selected card
       selection: 'rockets',
-      showFullCardDragon: false,
-      showFullCardRocket: false,
+      showFullCardDragon: true,
+      showFullCardRocket: true,
     };
   };
 
@@ -79,57 +79,56 @@ class CardSection extends React.Component {
   // Select a card to SEE MORE  ------------------------------- // 
   // ----------------------------------------------------------- //
   seeMore = (selection) => {
-    selection.preventDefault();
-
     this.setState({
       specificData: selection,
     });
-    if ( this.showFullCardRocket === true ) {
-        fetch(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.specificData.rocket_id}`) 
-        .then(response => response.json())
-        .then((data) => {
-          console.log('Fetch CardFull:', data);
-          console.log('id', this.state.specificData.rocket_id);
-          this.setState({
-            specificData: data,
-          });
-         })
-        .catch((error) => {
-          console.log("Fetch CardFull Error:", error)
-        });
-    } else if ( this.showFullCardDragon === true) {
-        fetch(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.specificData.id}`)
-        .then(response => response.json())
-        .then((data) => {
-          console.log('Fetch CardFull:', data);
-          console.log('id', this.state.specificData.id);
-          this.setState({
-            specificData: data,
-          });
-         })
-        .catch((error) => {
-          console.log("Fetch CardFull Error:", error)
-        });
-    } else {
-      return;
-    }
+    // if ( this.showFullCardRocket === true ) {
+    //     fetch(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.specificData.rocket_id}`) 
+    //     .then(response => response.json())
+    //     .then((data) => {
+    //       console.log('Fetch CardFull:', data);
+    //       console.log('id', this.state.specificData.rocket_id);
+    //       this.setState({
+    //         specificData: data,
+    //       });
+    //      })
+    //     .catch((error) => {
+    //       console.log("Fetch CardFull Error:", error)
+    //     });
+    // } else {
+    //     fetch(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.specificData.id}`)
+    //     .then(response => response.json())
+    //     .then((data) => {
+    //       console.log('Fetch CardFull:', data);
+    //       console.log('id', this.state.specificData.id);
+    //       this.setState({
+    //         specificData: data,
+    //       });
+    //      })
+    //     .catch((error) => {
+    //       console.log("Fetch CardFull Error:", error)
+    //     });
+    // } 
+    // else {
+    //   return;
+    // }
   }; 
 
   render() {
 
-    console.log("summaryData", this.state.summaryData, 
-    "fullCardRocket?", this.state.showFullCardRocket,
-    "fullCardDragon?", this.state.showFullCardDragon)
+    // console.log("summaryData", this.state.summaryData, 
+    // "fullCardRocket?", this.state.showFullCardRocket,
+    // "fullCardDragon?", this.state.showFullCardDragon)
    
-    let showFullCardDragon = this.state.showFullCardDragon; 
+    // let showFullCardDragon = this.state.showFullCardDragon; 
     let showFullCardRocket = this.state.showFullCardRocket; 
 
     return(
       <div>
         <DropDown setDragon={this.setDragon} setRocket={this.setRocket}/>
-        { showFullCardDragon ? <CardFull specificData={this.state.specificData} selection={this.state.selection} /> : null }
-        { showFullCardRocket ? <CardFull specificData={this.state.specificData} selection={this.state.selection} /> : null }
-        <CardSummary seeMore={this.seeMore} data={this.state.summaryData} specificData={this.state.specificData} />
+        {/* { showFullCardDragon ? <CardFull summaryData={this.state.summaryData} specificData={this.state.specificData} selection={this.state.selection} /> : null } */}
+        { showFullCardRocket ? <CardFull summaryData={this.state.summaryData} specificData={this.state.specificData} selection={this.state.selection} /> : null }
+        <CardSummary seeMore={this.seeMore} summaryData={this.state.summaryData} specificData={this.state.specificData} />
       </div>
     );
   }

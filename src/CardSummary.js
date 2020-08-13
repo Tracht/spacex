@@ -19,7 +19,7 @@ class CardSummary extends React.Component {
       <div>
        <section>
         <div class="w3-row-padding">
-          {this.props.data.map(
+          {this.props.summaryData.map(
             (selection) => {
               return(
                 <div class="w3-col s4" >
