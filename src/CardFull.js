@@ -5,13 +5,6 @@ import Card from 'react-bootstrap/Card';
 
 class CardFull extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     specificData: {},
-  //   };
-  // };
-
   render() {
     return(
 

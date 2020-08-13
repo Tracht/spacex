@@ -82,36 +82,6 @@ class CardSection extends React.Component {
     this.setState({
       specificData: selection,
     });
-    // if ( this.showFullCardRocket === true ) {
-    //     fetch(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.specificData.rocket_id}`) 
-    //     .then(response => response.json())
-    //     .then((data) => {
-    //       console.log('Fetch CardFull:', data);
-    //       console.log('id', this.state.specificData.rocket_id);
-    //       this.setState({
-    //         specificData: data,
-    //       });
-    //      })
-    //     .catch((error) => {
-    //       console.log("Fetch CardFull Error:", error)
-    //     });
-    // } else {
-    //     fetch(`https://api.spacexdata.com/v3/${this.state.selection}/${this.state.specificData.id}`)
-    //     .then(response => response.json())
-    //     .then((data) => {
-    //       console.log('Fetch CardFull:', data);
-    //       console.log('id', this.state.specificData.id);
-    //       this.setState({
-    //         specificData: data,
-    //       });
-    //      })
-    //     .catch((error) => {
-    //       console.log("Fetch CardFull Error:", error)
-    //     });
-    // } 
-    // else {
-    //   return;
-    // }
   }; 
 
   render() {
@@ -120,13 +90,11 @@ class CardSection extends React.Component {
     // "fullCardRocket?", this.state.showFullCardRocket,
     // "fullCardDragon?", this.state.showFullCardDragon)
    
-    // let showFullCardDragon = this.state.showFullCardDragon; 
     let showFullCardRocket = this.state.showFullCardRocket; 
 
     return(
       <div>
         <DropDown setDragon={this.setDragon} setRocket={this.setRocket}/>
-        {/* { showFullCardDragon ? <CardFull summaryData={this.state.summaryData} specificData={this.state.specificData} selection={this.state.selection} /> : null } */}
         { showFullCardRocket ? <CardFull summaryData={this.state.summaryData} specificData={this.state.specificData} selection={this.state.selection} /> : null }
         <CardSummary seeMore={this.seeMore} summaryData={this.state.summaryData} specificData={this.state.specificData} />
       </div>
