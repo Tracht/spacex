@@ -18,22 +18,22 @@ class CardFull extends React.Component {
                   <Card.Body>
                     <Card.Title> {selection.rocket_name} </Card.Title>
                     <Card.Title> {selection.name} </Card.Title>
-                      <Card.Text> {selection.country} </Card.Text>
-                      <Card.Text> 
-                          {selection.success_rate_pct !== "0" && selection.success_rate_pct ? 
-                          <p> Success rate: {selection.success_rate_pct}% </p> : null}  
-                      </Card.Text>
-                      <Card.Text> 
-                        {selection.cost_per_launch &&
-                        <p> Cost per launch: <span></span> 
-                          { new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(`${selection.cost_per_launch}`)}
-                        </p>}
-                      </Card.Text>
-                      <Card.Text> 
-                        {selection.crew_capacity !== "0" && selection.crew_capacity ? 
-                        <p> Crew capacity: {selection.crew_capacity} </p> : null}
-                      </Card.Text>
-                      <Card.Text class="card-description"> {selection.description} </Card.Text>
+                    <Card.Text> {selection.country} </Card.Text>
+                    <Card.Text> 
+                        {selection.success_rate_pct !== "0" && selection.success_rate_pct ? 
+                        <p> Success rate: {selection.success_rate_pct}% </p> : null}  
+                    </Card.Text>
+                    <Card.Text> 
+                      {selection.cost_per_launch &&
+                      <p> Cost per launch: <span></span> 
+                        { new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(`${selection.cost_per_launch}`)}
+                      </p>}
+                    </Card.Text>
+                    <Card.Text> 
+                      {selection.crew_capacity !== "0" && selection.crew_capacity ? 
+                      <p> Crew capacity: {selection.crew_capacity} </p> : null}
+                    </Card.Text>
+                    <Card.Text class="card-description"> {selection.description} </Card.Text>
                   </Card.Body>
                 </Card>
               </div>
@@ -42,10 +42,10 @@ class CardFull extends React.Component {
         } else {
           return null;
         }
-        }
-      )
+      }
     )
-  }
+  )
+}
 
 }
 
