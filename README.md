@@ -4,6 +4,11 @@
 - [React](https://github.com/facebook/create-react-app)
 - [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
 
+## On the to-do list:
+- Reafactor and consolidate API fetch request (currently setDragon & setRocket)
+- Add tests
+- UI improvements (i.e. add carousel for images)
+
 ### Installation Guide 
 - Clone or Fork the project repo
 - To start the web app in development mode: 
@@ -12,7 +17,7 @@
   - The page will reload if you make any edits
   - You will see lint errors in the console. <br />
   
-### To run the tests
+### To run the tests (CURRENTLY NO TESTS).
   - From the terminal type: `yarn test` or `npm test`
   - This launches the test runner in the interactive watch mode. 
   - See [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information. <br />
