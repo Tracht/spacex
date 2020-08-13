@@ -1,11 +1,11 @@
 import React from "react";
 import "./app.css";
-import Figure from 'react-bootstrap/Figure';
 import Card from 'react-bootstrap/Card';
 
 class CardFull extends React.Component {
 
   render() {
+
     return(
 
       this.props.summaryData.map( (selection) => {
@@ -18,19 +18,22 @@ class CardFull extends React.Component {
                   <Card.Body>
                     <Card.Title> {selection.rocket_name} </Card.Title>
                     <Card.Title> {selection.name} </Card.Title>
-                      <Figure>
-                        <Figure.Image
-                          width="100%"
-                          height="100%"
-                          src={selection.flickr_images}
-                          rounded
-                        />
-                      </Figure> 
-                      <Card.Title class="card-description"> {selection.description} </Card.Title>
-                      <Card.Text> {selection.success_rate_pct}</Card.Text>
-                      <Card.Text> {selection.cost_per_launch} </Card.Text>
-                      <Card.Text> {selection.crew_capacity} </Card.Text>
                       <Card.Text> {selection.country} </Card.Text>
+                      <Card.Text> 
+                          {selection.success_rate_pct !== "0" && selection.success_rate_pct ? 
+                          <p> Success rate: {selection.success_rate_pct}% </p> : null}  
+                      </Card.Text>
+                      <Card.Text> 
+                        {selection.cost_per_launch &&
+                        <p> Cost per launch: <span></span> 
+                          { new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(`${selection.cost_per_launch}`)}
+                        </p>}
+                      </Card.Text>
+                      <Card.Text> 
+                        {selection.crew_capacity !== "0" && selection.crew_capacity ? 
+                        <p> Crew capacity: {selection.crew_capacity} </p> : null}
+                      </Card.Text>
+                      <Card.Text class="card-description"> {selection.description} </Card.Text>
                   </Card.Body>
                 </Card>
               </div>
