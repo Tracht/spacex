@@ -3,6 +3,7 @@
 ## TechStack 
 - [React](https://github.com/facebook/create-react-app)
 - [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
+- Note: this project takes a class-based approach in designing components. 
 
 ### To do list
 - Reafactor and consolidate API fetch request (currently setDragon & setRocket)
