@@ -1,6 +1,12 @@
 # SpaceX!
 
-## TechStack 
+### Task
+Build a React app with the functionality that meets the following requirements:
+* Fetch and render a list of rockets or dragons from [SpaceX's API](https://docs.spacexdata.com/).
+* Show extended information about a selected list item in a separate box, modal or page.
+* You have complete freedom over what the UI looks like
+
+### TechStack 
 - [React](https://github.com/facebook/create-react-app)
 - [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
 - Note: this project takes a class-based approach in designing components. 
