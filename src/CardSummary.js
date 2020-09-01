@@ -5,14 +5,6 @@ import Figure from 'react-bootstrap/Figure';
 import Button from 'react-bootstrap/Button';
 
 class CardSummary extends React.Component {
-
-  activeConversionToString = (boolean) => {
-    if (boolean === true ) {
-      return "Currently active"
-    } else {
-      return "Not currently active"
-    }
-  }
  
   render() {
     return(
@@ -31,7 +23,7 @@ class CardSummary extends React.Component {
                       <Card.Title> {selection.name} </Card.Title>
                       <Card.Title> {selection.rocket_name} </Card.Title>
                           <Card.Text> First flight: {selection.first_flight} </Card.Text>
-                          <Card.Text> {this.activeConversionToString(selection.active)} </Card.Text>
+                          <Card.Text> {selection.active ? "currently active" : "not currently active"} </Card.Text>
                       <Button onClick={ () => this.props.seeMore(selection) } type="submit" variant="secondary" size="sm">See more</Button>
                     </Card.Body>
                   </Card>
