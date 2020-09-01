@@ -19,13 +19,13 @@ Build a React app with the functionality that meets the following requirements:
 ### Installation Guide 
 - Clone or Fork the project repo
 - To start the web app in development mode: 
-  - From the terminal type `yarn start` or `npm start`
+  - From the terminal type `npm install` then `npm start`
   - Then view it in the browser by opening [http://localhost:3000](http://localhost:3000)
   - The page will reload if you make any edits
   - You will see lint errors in the console. <br />
   
 ### To run the tests (CURRENTLY NO TESTS).
-  - From the terminal type: `yarn test` or `npm test`
+  - From the terminal type: `npm test`
   - This launches the test runner in the interactive watch mode. 
   - See [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information. <br />
 
