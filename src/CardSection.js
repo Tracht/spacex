@@ -35,9 +35,9 @@ class CardSection extends React.Component {
   // ----------------------------------------------------------- //
   setDragon = (e) => {
     e.preventDefault();
-    this.setState({
-      selection: "dragons",
-    });
+    // this.setState({
+    //   selection: selection,
+    // });
     fetch(`https://api.spacexdata.com/v3/dragons`)
     .then(response => response.json())
     .then((data) => {
@@ -55,9 +55,9 @@ class CardSection extends React.Component {
   // ----------------------------------------------------------- //
   setRocket = (e) => {
     e.preventDefault();
-    this.setState({
-      selection: "rockets",
-    });
+    // this.setState({
+    //   selection: "rockets",
+    // });
     fetch(`https://api.spacexdata.com/v3/rockets`)
     .then(response => response.json())
     .then((data) => {
