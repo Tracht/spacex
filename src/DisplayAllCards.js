@@ -17,7 +17,7 @@ class DisplayAllCards extends React.Component {
                   <Card style={{ width: '100%', height: '100%'}} id={selection.id}>
                     <Card.Body>
                       <Figure>
-                        <Figure.Image width="100%" height="100%" src={selection.flickr_images} rounded />
+                        <Figure.Image width="100%" height="100%" src={selection.flickr_images} alt="rocket or dragon" rounded />
                       </Figure> 
                       <Card.Title> {selection.name} </Card.Title>
                       <Card.Title> {selection.rocket_name} </Card.Title>
