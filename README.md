@@ -7,9 +7,11 @@ Build a React app with the functionality that meets the following requirements:
 * You have complete freedom over what the UI looks like
 
 ### Preview
-![image](https://user-images.githubusercontent.com/28805811/93246146-3f6be200-f784-11ea-8ce2-d51a68f44e7b.png)
+![image](https://user-images.githubusercontent.com/28805811/93249261-eeaab800-f788-11ea-9c8d-5969afc118b2.png)
 
-![image](https://user-images.githubusercontent.com/28805811/93246189-514d8500-f784-11ea-9a91-ee5b5f568660.png)
+![image](https://user-images.githubusercontent.com/28805811/93249298-fd916a80-f788-11ea-9a25-8e0cdc8883ca.png)
+
+![image](https://user-images.githubusercontent.com/28805811/93249326-08e49600-f789-11ea-90a4-ad246c3efb7b.png)
 
 ### TechStack 
 - [React](https://github.com/facebook/create-react-app)
