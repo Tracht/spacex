@@ -1,7 +1,6 @@
 import React from 'react';
 import "./app.css";
 import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown'; 
 
 class NavBarTitle extends React.Component {
 
@@ -11,7 +10,6 @@ class NavBarTitle extends React.Component {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand>SpaceX</Navbar.Brand>
       </Navbar>
-
       </div>
     )
   };

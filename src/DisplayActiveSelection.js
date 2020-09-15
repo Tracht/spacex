@@ -2,15 +2,15 @@ import React from "react";
 import "./app.css";
 import Card from 'react-bootstrap/Card';
 
-class CardFull extends React.Component {
+class DisplayActiveSelection extends React.Component {
 
   render() {
 
     return(
 
-      this.props.summaryData.map( (selection) => {
+      this.props.showAllCards.map( (selection) => {
 
-        if ( selection.id === this.props.specificData.id ) {
+        if ( selection.id === this.props.showSpecificCard.id ) {
           return ( 
             <div class="w3-row-padding">
               <div class="w3-col" >
@@ -49,4 +49,4 @@ class CardFull extends React.Component {
 
 }
 
-export default CardFull;
+export default DisplayActiveSelection;

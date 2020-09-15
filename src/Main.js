@@ -1,18 +1,16 @@
 import React from 'react';
-import CardSummary from './CardSummary.js';
-import CardFull from './CardFull.js';
+import DisplayAllCards from './DisplayAllCards.js';
+import DisplayActiveSelection from './DisplayActiveSelection.js';
 import DropDown from './DropDown.js';
 
-
-class CardSection extends React.Component {
+class Main extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      summaryData: [], // shows all cards
-      specificData: {}, // shows selected card
-      selection: 'rockets',
-      showFullCard: true,
+      showAllCards: [], // shows all cards // summaryCard
+      showSpecificCard: {}, // shows selected card // summaryData
+      selection: 'rockets'
     };
   };
 
@@ -23,7 +21,7 @@ class CardSection extends React.Component {
     .then((data) => {
         console.log('Fetch CardSummary:', data);
         this.setState({
-          summaryData: data,
+          showAllCards: data,
         });
       })
     .catch((error) => {
@@ -35,15 +33,12 @@ class CardSection extends React.Component {
   // ----------------------------------------------------------- //
   setDragon = (e) => {
     e.preventDefault();
-    // this.setState({
-    //   selection: selection,
-    // });
     fetch(`https://api.spacexdata.com/v3/dragons`)
     .then(response => response.json())
     .then((data) => {
         console.log('Fetch CardSummary:', data);
         this.setState({
-          summaryData: data,
+          showAllCards: data,
         });
       })
     .catch((error) => {
@@ -55,15 +50,12 @@ class CardSection extends React.Component {
   // ----------------------------------------------------------- //
   setRocket = (e) => {
     e.preventDefault();
-    // this.setState({
-    //   selection: "rockets",
-    // });
     fetch(`https://api.spacexdata.com/v3/rockets`)
     .then(response => response.json())
     .then((data) => {
         console.log('Fetch CardSummary:', data);
         this.setState({
-          summaryData: data,
+          showAllCards: data,
         });
       })
     .catch((error) => {
@@ -75,31 +67,30 @@ class CardSection extends React.Component {
   // ----------------------------------------------------------- //
   seeMore = (selection) => {
     this.setState({
-      specificData: selection,
+      showSpecificCard: selection,
     });
   }; 
 
   render() {
-   
-    let showFullCard = this.state.showFullCard; 
+    let showSpecificCard = this.state.showSpecificCard; 
 
     return(
       <div>
         <DropDown setDragon={this.setDragon} setRocket={this.setRocket}/>
         
-        { showFullCard ? <CardFull 
+        { showSpecificCard ? <DisplayActiveSelection 
           selection={this.selection} 
-          summaryData={this.state.summaryData} 
-          specificData={this.state.specificData} 
+          showAllCards={this.state.showAllCards} 
+          showSpecificCard={this.state.showSpecificCard} 
           /> : null }
 
-        <CardSummary seeMore={this.seeMore} summaryData={this.state.summaryData} specificData={this.state.specificData} />
+        <DisplayAllCards seeMore={this.seeMore} showAllCards={this.state.showAllCards} showSpecificCard={this.state.showSpecificCard} />
       </div>
     );
   }
 }
 
-export default CardSection;
+export default Main;
 
 
 
