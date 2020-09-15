@@ -8,10 +8,8 @@ Build a React app with the functionality that meets the following requirements:
 
 ### Preview
 ![image](https://user-images.githubusercontent.com/28805811/93249261-eeaab800-f788-11ea-9c8d-5969afc118b2.png)
-
-![image](https://user-images.githubusercontent.com/28805811/93249298-fd916a80-f788-11ea-9a25-8e0cdc8883ca.png)
-
 ![image](https://user-images.githubusercontent.com/28805811/93249326-08e49600-f789-11ea-90a4-ad246c3efb7b.png)
+![image](https://user-images.githubusercontent.com/28805811/93249298-fd916a80-f788-11ea-9a25-8e0cdc8883ca.png)
 
 ### TechStack 
 - [React](https://github.com/facebook/create-react-app)
